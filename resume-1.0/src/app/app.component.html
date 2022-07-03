@@ -1,12 +1,12 @@
 <div id="page-content">
-    <app-navbar></app-navbar>
-    <div id="about">
+    <app-navbar (navbarClick)="scrollToSection($event)"></app-navbar>
+    <div id="about" #aboutSection>
         <app-about></app-about>
     </div>
-    <div id="experience">
+    <div id="experience" #experienceSection>
         <app-experience></app-experience>
     </div>
-    <div id="contact">
+    <div id="contact" #contactSection>
         <app-contact></app-contact>
     </div>
 </div>

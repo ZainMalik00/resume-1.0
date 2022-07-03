@@ -13,13 +13,25 @@
 #navbar-list {
     display: flex;
     width: 50%;
-    justify-content: space-around;
+    justify-content: flex-end;
 }
+
+#navbar-list-content {
+    display: flex;
+    column-gap: 20px;
+}
+
+#navbar-button {
+    display: none;
+}
+
 a {
     color: #000000;
     font-size: 2rem;
     font-weight: bold;
-    text-decoration: none; 
+    text-decoration: none;
+    margin-right: 5px;
+    margin-left: 5px; 
 }
 
 a:hover {

@@ -1,10 +1,13 @@
 <div id="navbar-component">
     <div id="navbar-home">
-        <a href="#">LOGO HERE</a>
+        <a>LOGO HERE</a>
     </div>
     <div id="navbar-list">
-        <a (click)="clickedSection('about')">ABOUT</a>
-        <a (click)="clickedSection('experience')">EXPERIENCE</a>
-        <a (click)="clickedSection('contact')">CONTACT</a>
+        <div id="navbar-list-content">
+            <a (click)="clickedSection('about')">ABOUT</a>
+            <a (click)="clickedSection('experience')">EXPERIENCE</a>
+            <a (click)="clickedSection('contact')">CONTACT</a>
+        </div>
+        <div id="navbar-button"></div>
     </div>
 </div>
