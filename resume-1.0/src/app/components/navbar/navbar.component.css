@@ -1,0 +1,21 @@
+#navbar-component {
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+#navbar-home {
+    display: flex;
+    width: 50%;
+}
+
+#navbar-list {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+}
+a {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none; 
+}
