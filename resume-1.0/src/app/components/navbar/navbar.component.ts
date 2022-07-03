@@ -9,7 +9,13 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  clickedSection(selectedDiv : string): void {
+    const element = document.getElementById(selectedDiv);
+    if(element != null) {
+      element.scrollIntoView({behavior: "smooth"} );
+    }
   }
 
 }
