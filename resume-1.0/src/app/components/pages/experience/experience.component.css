@@ -1,0 +1,90 @@
+:host {
+  --background: #202124;
+  --primary: #000000;
+  --accent: #9c9b98;
+}
+/* body {
+  display: flex;
+  background-color: var(--background);
+  min-height: 90vh;
+  justify-content: center;
+  line-height: 1.5;
+} */
+
+.tabs-container {
+  position: relative;
+  height: 300px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tab {
+  width: 33%;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.tabs .tab:hover {
+  color: var(--accent);
+    background-color: var(--primary);
+}
+
+.tabs .tab.active {
+  color: var(--accent);
+}
+
+.indicator {
+  position: relative;
+  height: 5px;
+  width: 100%;
+  background-color: var(--primary);
+  border-radius: 10px;
+}
+
+.indicator .chosen {
+  position: absolute;
+  height: 5px;
+  width: 33.3%;
+  background-color: var(--accent);
+  border-radius: 10px;
+  left: 0%;
+  transition: 0.2s;
+}
+
+#tabs-content {
+  display: flex;
+  color: var(--accent);
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.content {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  
+}
+
+.content.active {
+  opacity: 1;
+  transition: 0.2s;
+  height: fit-contents;
+}
+
+.logo {
+  width: 10rem;
+  height: 10rem;
+}
+
+.text {
+  width: 50%;
+  margin-left: 1em;
+  color: var(--primary);
+}

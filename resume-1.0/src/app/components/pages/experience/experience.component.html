@@ -1,11 +1,30 @@
-<p>I did work work at these places, check it out!
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc gravida venenatis diam, finibus dignissim quam vestibulum et. Nam mollis dolor vitae lacus pulvinar, in rutrum ex scelerisque. Nulla blandit sit amet libero sit amet vehicula. Ut ligula nulla, convallis a leo vel, efficitur rhoncus magna. In et vehicula magna. Pellentesque eget pulvinar ex, vitae venenatis purus. Sed massa magna, laoreet eget risus vel, tincidunt ullamcorper lectus. Proin eleifend ex tellus, sit amet elementum enim dignissim ac. Etiam faucibus non mauris id rhoncus. Curabitur volutpat elit nec ipsum ultrices, id blandit leo vestibulum. Vestibulum vitae velit est. Integer at ipsum justo. Maecenas lacinia suscipit felis ut fringilla. Maecenas ipsum mauris, elementum vitae lacinia vitae, placerat sit amet lectus. Aliquam ornare euismod ligula at tristique. Praesent dignissim risus ac finibus porttitor.
-
-Pellentesque porta, risus nec luctus facilisis, tortor sapien rhoncus neque, vel condimentum urna massa non ante. Nam blandit fermentum pellentesque. Phasellus ultricies vel neque ac dignissim. Vestibulum sollicitudin nibh ut purus feugiat, vel pharetra ipsum auctor. Fusce pulvinar odio ac magna congue pellentesque. In tristique sit amet nunc sit amet sagittis. Aenean dignissim egestas mauris a tempus. Phasellus iaculis, risus eu sollicitudin rhoncus, elit tellus laoreet metus, at posuere odio ante ac magna.
-
-Pellentesque eget pellentesque ligula, sed blandit risus. Duis posuere eu magna vel elementum. Nullam ultrices lorem vel urna volutpat, ac interdum neque dictum. Nam a ante augue. Ut at ultrices est. Vestibulum euismod porttitor faucibus. Integer viverra est id interdum tincidunt. Ut quis felis dolor. Pellentesque augue mi, porta ac consectetur ac, interdum et leo. Donec id eros eu dui interdum cursus et nec lorem.
-
-Integer elementum dignissim nunc sit amet tempus. Nullam ornare ante metus, non egestas sapien eleifend id. Vestibulum posuere finibus mauris, non ultricies eros pharetra vitae. Mauris accumsan nec dolor vitae sagittis. Aliquam vitae sollicitudin lectus, sed dapibus dui. Fusce sit amet eros in ex mattis vestibulum. Ut pulvinar euismod orci, id pellentesque ante volutpat non.
-
-Duis placerat ligula nibh, imperdiet convallis felis auctor vel. Suspendisse turpis sem, aliquam eget finibus eu, efficitur blandit arcu. Cras porttitor est nec tristique sollicitudin. Nam suscipit sed quam id congue. Aliquam erat volutpat. Duis felis nunc, venenatis a elementum ut, lacinia et arcu. Nam posuere nunc cursus tellus imperdiet gravida.
-</p>
+<div class="tabs-container">
+    <div class="tabs" #tabs>
+      <div class="tab active" data-value="0">Tab 1</div>
+      <div class="tab" data-value="1">Tab 2</div>  
+      <div class="tab" data-value="2">Tab 3</div>  
+    </div>
+    <div class="indicator">
+      <div class="chosen" #chosen></div>
+    </div>
+    <div id="tabs-content" #tabsContent [style.height]="this.tabsContentHeight">
+      <div class="content active" data-value="0">
+        <img class='logo'>
+        <div class="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac massa vel dui blandit pharetra. Vivamus quis posuere mauris. Integer mollis ullamcorper nulla vitae fringilla. Curabitur pretium lorem fermentum ullamcorper gravida. Aenean iaculis odio eget neque sollicitudin ullamcorper. Vestibulum sodales quis enim eget auctor. Fusce a arcu vel velit pharetra volutpat a quis eros.
+        </div>
+      </div>
+      <div class="content" data-value="1">
+        <img class="logo">
+        <div class="text">
+        Praesent bibendum arcu in vehicula finibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur ac convallis est. Proin at tempor velit. Etiam egestas erat nibh, quis tincidunt felis ullamcorper ut. Fusce sit amet est eu urna rhoncus facilisis suscipit eget lorem. Ut accumsan, ligula nec molestie luctus, nunc dui sollicitudin neque, quis vulputate ante lacus at nunc.
+        </div>
+      </div>
+      <div class="content" data-value="2">
+        <img class="logo">
+        <div class="text">
+        Donec egestas interdum ullamcorper. Sed odio est, placerat sit amet varius in, gravida sit amet purus. Sed mollis est vitae scelerisque blandit. Suspendisse ac diam vel ante blandit ornare nec eget elit. Nam sollicitudin justo a libero imperdiet, at elementum est vestibulum. Etiam vehicula porta lacus at dignissim. Ut cursus lectus a porta euismod. In sit amet ligula orci. Morbi aliquet nunc mi. Maecenas pretium lorem id urna mattis ullamcorper. Praesent at varius ipsum.
+        </div>
+      </div>
+    </div>
+  </div>
