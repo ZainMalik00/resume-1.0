@@ -18,7 +18,12 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {}
 
-  ngAfterViewInit(): void {}
+  ngAfterViewInit(): void {
+    setTimeout(()=> {//Avoid ExpressionChangedAfterItHasBeenCheckedError
+      this.navbarToggle("placeholder");
+  }, 0);
+    
+  }
 
   toggleNavbarOptions(): void {
     if(this.hideNavbarOptions){
