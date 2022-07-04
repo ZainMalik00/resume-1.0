@@ -2,12 +2,19 @@
     <div id="navbar-home">
         <a>LOGO HERE</a>
     </div>
-    <div id="navbar-list">
-        <div id="navbar-list-content">
+    <div id="navbar-list" #navbarList>
+        <div id="navbar-button" [style.display]="navbarOverflown ? 'block' : 'none'">
+            <a (click)="toggleNavbarOptions()">IMG</a>
+        </div>
+        <div id="navbar-list-content" #navbarListContent [style.display]="navbarOverflown ? 'none' : 'flex'">
             <a (click)="clickedSection('about')">ABOUT</a>
             <a (click)="clickedSection('experience')">EXPERIENCE</a>
             <a (click)="clickedSection('contact')">CONTACT</a>
         </div>
-        <div id="navbar-button"></div>
     </div>
+</div>
+<div id="auxiliary-navbar-list" [style.display]="hideNavbarOptions && navbarOverflown? 'flex' : 'none'">
+    <a (click)="clickedSection('about')">ABOUT</a>
+    <a (click)="clickedSection('experience')">EXPERIENCE</a>
+    <a (click)="clickedSection('contact')">CONTACT</a>
 </div>

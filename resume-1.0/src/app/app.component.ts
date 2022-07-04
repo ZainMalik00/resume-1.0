@@ -7,13 +7,12 @@ import { Component, ViewChild, AfterViewInit, ElementRef } from '@angular/core';
 })
 export class AppComponent implements AfterViewInit {
   title = 'resume-1.0';
+  
   @ViewChild("aboutSection") aboutSection !: ElementRef;
   @ViewChild("experienceSection") experienceSection !: ElementRef;
   @ViewChild("contactSection") contactSection !: ElementRef;
   
-  ngAfterViewInit() {
-    console.log('on after view init', this.aboutSection);
-  }
+  ngAfterViewInit() {}
 
   scrollToSection(selectedDiv : any): void {
     switch (selectedDiv){

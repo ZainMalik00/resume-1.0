@@ -1,30 +1,44 @@
-import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
-
+import { AfterViewInit, Component, ElementRef, EventEmitter, HostListener, OnInit, Output, ViewChild } from '@angular/core';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, AfterViewInit {
+  navbarOverflown : boolean = false;
+  hideNavbarOptions : boolean = true;
+  previousNavbarListWidth : number = 0;
 
-  constructor() { }
-  
+  constructor() {}
+
   @Output() navbarClick = new EventEmitter();
 
+  @ViewChild("navbarList") navbarList !: ElementRef;
+  @ViewChild("navbarListContent") navbarListContent !: ElementRef;
+
   ngOnInit(): void {}
+
+  ngAfterViewInit(): void {}
+
+  toggleNavbarOptions(): void {
+    if(this.hideNavbarOptions){
+      this.hideNavbarOptions = false;
+    }else{
+      this.hideNavbarOptions = true;
+    }
+  }
 
   clickedSection(section : string): void {
     this.navbarClick.emit(section);
   }
 
   @HostListener('window:resize', ['$event']) navbarToggle(event: any) : void {
-    const navList = document.getElementById("navbar-list");
-    const navListContent = document.getElementById("navbar-list-content");
-
-    if(navList != null && navListContent != null) {//null check
-      if(navListContent.offsetWidth > navList.offsetWidth){//when navbar list overflows to the left side
-
-      }
+    if(this.navbarListContent.nativeElement.offsetWidth >= this.navbarList.nativeElement.offsetWidth){//when navbar list overflows to the left side
+      this.navbarOverflown = true;
+      this.previousNavbarListWidth = this.navbarListContent.nativeElement.offsetWidth;
+    }
+    if(this.previousNavbarListWidth < this.navbarList.nativeElement.offsetWidth){
+      this.navbarOverflown = false;
     }
   }
 }
