@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-experience',
@@ -8,7 +8,7 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 export class ExperienceComponent implements OnInit, AfterViewInit {
   tabsContentHeight: string = '300px';
 
-  constructor() { }
+  constructor(private cdr:ChangeDetectorRef) {}
 
   @ViewChild('tabs') tabs !: ElementRef;
   @ViewChild('tabsContent') tabsContent !: ElementRef;
@@ -17,14 +17,14 @@ export class ExperienceComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
-    this.setContainerHeight();
+    this.setContainerHeight(0);
   }
 
-
-  
-  setContainerHeight(): void{
-    const contents = this.tabsContent.nativeElement.children;
-    this.tabsContentHeight = contents.item(0).offsetHeight+"px";
+  setContainerHeight(index : number): void {
+    if(parseInt(index.toString()) == index){ //Ensures index is an integer
+      const contents = this.tabsContent.nativeElement.children;
+      this.tabsContentHeight = contents.item(index).offsetHeight+"px";
+      this.cdr.detectChanges(); //Updates View and Avoids ExpressionChangedAfterItHasBeenCheckedError
+    }
   }
-
 }

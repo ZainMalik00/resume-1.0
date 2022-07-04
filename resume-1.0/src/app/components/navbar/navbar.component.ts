@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     setTimeout(()=> {//Avoid ExpressionChangedAfterItHasBeenCheckedError
-      this.navbarToggle("placeholder");
+      this.navbarToggle("placeholder"); //Placeholder is not necessary and is just used to trigger the function
     }, 0);
   }
 
