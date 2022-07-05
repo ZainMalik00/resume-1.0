@@ -2,6 +2,9 @@
   --background: #202124;
   --primary: #000000;
   --accent: #9c9b98;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 /* body {
   display: flex;
@@ -13,7 +16,8 @@
 
 .tabs-container {
   position: relative;
-  height: 300px;
+  height: auto;
+  width: 75%;
 }
 
 .tabs {
@@ -67,7 +71,6 @@
   position: absolute;
   display: flex;
   justify-content: center;
-  align-items: center;
   opacity: 0;
   
 }
