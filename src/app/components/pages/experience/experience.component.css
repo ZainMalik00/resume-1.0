@@ -17,7 +17,7 @@
 .tabs-container {
   position: relative;
   height: auto;
-  width: 55%;
+  width: 75%;
 }
 
 .tabs {
@@ -69,7 +69,7 @@
 
 .content {
   position: absolute;
-  display: flex;
+  display: none;
   justify-content: center;
   opacity: 0;
   
@@ -79,6 +79,7 @@
   opacity: 1;
   transition: 0.2s;
   height: fit-contents;
+  display: flex;
 }
 
 .logo {
